@@ -2,4 +2,4 @@
 
 GitHub username at initialization time: GenieHuang
 
-For next steps, please refer to the instructions provided by your course.
+For next steps, please refer to the instructions provided by your course
