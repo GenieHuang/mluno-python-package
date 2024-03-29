@@ -1,0 +1,10 @@
+__pycache__/
+dist/
+.venv
+.pytest_cache/
+.ruff_cache/
+/docs/
+/reference/
+/.quarto/
+.DS_Store
+objects.json
