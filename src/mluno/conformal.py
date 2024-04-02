@@ -52,10 +52,9 @@ class ConformalPredictor:
         y : numpy.ndarray
             The target data used for training the model.
         """
-
         self.regressor.fit(X, y)
-        self.scores = self.regressor.predict(X)
-        self.quantile = np.quantile(np.abs(self.scores - y), 1 - self.alpha)
+        self.scores = np.abs(self.regressor.predict(X) - y)
+        self.quantile = np.quantile(self.scores, 1 - self.alpha)
 
     def predict(self, X):
         """

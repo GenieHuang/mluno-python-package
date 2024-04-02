@@ -141,7 +141,7 @@ class LinearRegressor:
         """
 
         X_b = np.c_[np.ones((X.shape[0], 1)), X]
-        # calculate the weights using the normal equation
+        # calculate the weights
         self.weights = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)
 
     def predict(self, X):
