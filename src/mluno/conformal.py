@@ -5,8 +5,6 @@ class ConformalPredictor:
     """
     A class used to represent a Conformal Predictor.
 
-    ...
-
     Attributes
     ----------
     regressor : object
@@ -17,25 +15,10 @@ class ConformalPredictor:
         The predicted scores from the fitted regression model.
     quantile : float
         The quantile value calculated based on the scores and alpha.
-
-    Methods
-    -------
-    fit(X, y):
-        Fit the model using X as training data and y as target values.
-    predict(X):
-        Predict the target and prediction interval for the provided data.
     """
 
     def __init__(self, regressor, alpha=0.05):
-        """
-        Parameters
-        ----------
-        regressor : object
-            The regression model to be used for prediction.
-        alpha : float, optional
-            The significance level used for prediction interval calculation (default is 0.05).
-        """
-
+        
         self.regressor = regressor
         self.alpha = alpha
         self.scores = None

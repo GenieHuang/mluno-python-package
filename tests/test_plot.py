@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 def test_plot_predictions():
     X, y = make_line_data()
-    regressor = LinearRegression().fit(X, y)
+    regressor = LinearRegression()
     regressor.fit(X, y)
 
     fig, ax = plot_predictions(X, y, regressor, title="Test Plot")
@@ -22,7 +22,7 @@ def test_plot_predictions():
 
 def test_plot_predictions_conformal():
     X, y = make_line_data()
-    regressor = LinearRegression().fit(X, y)
+    regressor = LinearRegression()
     regressor.fit(X, y)
     conformal = ConformalPredictor(regressor)
     conformal.fit(X, y)

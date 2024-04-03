@@ -11,3 +11,4 @@ objects.json
 _sidebar.yml
 requirements-dev.lock
 requirements.lock
+_site/
