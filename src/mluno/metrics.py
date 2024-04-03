@@ -7,14 +7,14 @@ def rmse(y_true, y_pred):
 
     Parameters
     ----------
-    y_true : numpy.ndarray
+    y_true : `ndarray`
         A 1D array of the true target values.
-    y_pred : numpy.ndarray)
+    y_pred : `ndarray`
         A 1D array of the predicted target values.
 
     Returns
     -------
-    float
+    `float`
         The RMSE between the true and predicted values.
     """
     return np.sqrt(np.mean((y_true - y_pred) ** 2))
@@ -26,14 +26,14 @@ def mae(y_true, y_pred):
 
     Parameters
     ----------
-    y_true : numpy.ndarray
+    y_true : `ndarray`
         A 1D array of the true target values.
-    y_pred : numpy.ndarray)
+    y_pred : `ndarray`
         A 1D array of the predicted target values.
 
     Returns
     -------
-    float
+    `float`
         The MAE between the true and predicted target values.
     """
     return np.mean(np.abs(y_true - y_pred))
@@ -45,18 +45,18 @@ def coverage(y_true, y_pred_lower, y_pred_upper):
 
     Parameters
     ----------
-    y_true : numpy.ndarray
+    y_true : `ndarray`
         A 1D array of the true target values.
     
-    y_pred_lower : numpy.ndarray
+    y_pred_lower : `ndarray`
         A 1D array of the lower bounds of the predicted intervals.
 
-    y_pred_upper : numpy.ndarray
+    y_pred_upper : `ndarray`
         A 1D array of the upper bounds of the predicted intervals.
 
     Returns
     -------
-    float
+    `float`
         The proportion of true values that fall within the predicted intervals.
     """
     coverage = (y_true >= y_pred_lower) & (y_true <= y_pred_upper)
@@ -69,15 +69,15 @@ def sharpness(y_pred_lower, y_pred_upper):
 
     Parameters
     ----------
-    y_pred_lower : numpy.ndarray
+    y_pred_lower : `ndarray`
         A 1D array of the lower bounds of the predicted intervals.
 
-    y_pred_upper : numpy.ndarray
+    y_pred_upper : `ndarray`
         A 1D array of the upper bounds of the predicted intervals.
 
     Returns
     -------
-    float
+    `float`
         The average width of the prediction intervals.
     """
     return np.mean(y_pred_upper - y_pred_lower)

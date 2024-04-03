@@ -6,7 +6,7 @@ class KNNRegressor:
 
     Parameters
     ----------
-    k : int
+    k : `int`
         The number of nearest neighbors to consider for regression.
     """
 
@@ -16,15 +16,15 @@ class KNNRegressor:
 
     def fit(self, X, y):
         """
-        Fit the model using X as training data and y as target values.
+        Fit the model using `X` as training data and `y` as target values.
 
         Parameters
         ----------
-        X : ndarray
-            The feature data used for training the model.
+        X : `ndarray`
+            The feature data used for training the model, which is a 2D array of shape `(n_samples, 1)`.
 
-        y : ndarray
-            The target data used for training the model.
+        y : `ndarray`
+            The target data used for training the model, which is a 1D array of shape `(n_samples,)`.
         """
 
         self.X = X
@@ -40,13 +40,13 @@ class KNNRegressor:
 
         Parameters
         ----------
-        X_new : numpy.ndarray
-            The feature data for which to predict targets.
+        X_new : `ndarray`
+            The feature data for which to predict targets, which is a 2D array of shape `(n_samples, 1)`.
 
         Returns
         -------
-        ndarray
-            The predicted targets for the provided data.
+        `ndarray`
+            The predicted targets for the provided data, which is a 1D array of shape `(n_samples,)`.
         """
 
         predicted_labels = [self._predict(x) for x in X_new]
@@ -71,8 +71,8 @@ class LinearRegressor:
 
     Attributes
     ----------
-    weights : ndarray
-        The weights of the linear regression model. Here, the weights are represented by the vector which for univariate regression is a 1D vector of length two.
+    weights : `ndarray`
+        The weights learned by the model.
 
     """
 
@@ -85,11 +85,11 @@ class LinearRegressor:
 
         Parameters
         ----------
-        X : ndarray
-            The feature data used for training the model.
+        X : `ndarray`
+            The feature data used for training the model, which is a 2D array of shape `(n_samples, 1)`.
         
-        y : ndarray
-            The target data used for training the model.
+        y : `ndarray`
+            The target data used for training the model, which is a 1D array of shape `(n_samples,)`.
         """
 
         X_b = np.c_[np.ones((X.shape[0], 1)), X]
@@ -102,13 +102,13 @@ class LinearRegressor:
 
         Parameters
         ----------
-        X : ndarray
-            The feature data for which to predict targets.
+        X : `ndarray`
+            The feature data for which to predict targets, which is a 2D array of shape `(n_samples, 1)`.
 
         Returns
         -------
-        ndarray
-            The predicted targets for the provided data.
+        `ndarray`
+            The predicted targets for the provided data, which is a 1D array of shape `(n_samples,)`.
         """
 
         X_b = np.c_[np.ones((X.shape[0], 1)), X]

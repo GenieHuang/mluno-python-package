@@ -1,13 +1,14 @@
 project:
   title: "MLUno API Reference"
   type: website
+  output-dir: docs
 
-# tell quarto to read the generated sidebar
 metadata-files:
   - _sidebar.yml
 
 website:
   title: "MLUno"
+  page-navigation: true
   
   navbar:
     left:
@@ -15,11 +16,9 @@ website:
         text: Reference
   
 quartodoc:
-  # the name used to import the package you want to create reference docs for
   title: "MLUno API Reference"
   package: mluno
 
-  # write sidebar data to this file
   sidebar: _sidebar.yml
 
   sections:

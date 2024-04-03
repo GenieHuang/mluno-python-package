@@ -5,16 +5,20 @@ class ConformalPredictor:
     """
     A class used to represent a Conformal Predictor.
 
+    Parameters
+    ----------
+    regressor : `object`
+        The regression model to be used for prediction.
+    alpha : `float`
+        The significance level used for prediction interval calculation.
+    
     Attributes
     ----------
-    regressor : object
-        The regression model to be used for prediction.
-    alpha : float
-        The significance level used for prediction interval calculation.
-    scores : numpy.ndarray
+    scores : `ndarray`
         The predicted scores from the fitted regression model.
-    quantile : float
+    quantile : `float`
         The quantile value calculated based on the scores and alpha.
+
     """
 
     def __init__(self, regressor, alpha=0.05):
@@ -30,9 +34,9 @@ class ConformalPredictor:
 
         Parameters
         ----------
-        X : numpy.ndarray
+        X : `ndarray`
             The feature data used for training the model.
-        y : numpy.ndarray
+        y : `ndarray`
             The target data used for training the model.
         """
         self.regressor.fit(X, y)
@@ -45,13 +49,13 @@ class ConformalPredictor:
 
         Parameters
         ----------
-        X : numpy.ndarray
+        X : `ndarray`
             The feature data for which to predict targets.
 
         Returns
         -------
-        tuple
-            The predicted target (y_pred), lower bound of prediction interval (y_lower), and upper bound of prediction interval (y_upper).
+        `tuple`
+            The predicted target (y_pred, 1D `ndarray`), lower bound of prediction interval (y_lower, 1D `ndarray`), and upper bound of prediction interval (y_upper, 1D `ndarray`).
         """
         
         y_pred = self.regressor.predict(X)

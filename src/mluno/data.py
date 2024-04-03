@@ -8,31 +8,31 @@ def make_line_data(n_samples=100, beta_0=0,beta_1=1, sd = 1,X_low=-10, X_high=10
 
     Parameters
     ----------
-    n_samples : int
+    n_samples : `int`
         Number of samples to generate.
 
-    beta_0 : float
+    beta_0 : `float`
         The true intercept of the linear model.
 
-    beta_1 : float
+    beta_1 : `float`
         The true slope of the linear model.
 
-    sd : float
+    sd : `float`
         Standard deviation of the normally distributed errors.
 
-    X_low : float
+    X_low : `float`
         Lower bound for the uniform distribution of X.
 
-    X_high : float
+    X_high : `float`
         Upper bound for the uniform distribution of X.
 
-    random_seed : int
+    random_seed : `int`
         Seed to control randomness.
 
     Returns
     -------
-    tuple
-        A tuple containing the X and y arrays. X is a 2D array with shape (n_samples, 1) and y is a 1D array with shape (n_samples,). X contains the simulated X values and y contains the corresponding true mean of the linear model with added normally distributed errors.
+    `tuple`
+        A tuple containing the `X` and `y` arrays. `X` is a 2D array with shape `(n_samples, 1)` and `y` is a 1D array with shape `(n_samples,)`. `X` contains the simulated `X` values and `y` contains the corresponding true mean of the linear model with added normally distributed errors.
     """
 
     np.random.seed(random_seed)
@@ -48,25 +48,25 @@ def make_sine_data(n_samples=100, sd=1, X_low=-6, X_high=6, random_seed=None):
 
     Parameters
     ----------
-    n_samples : int
+    n_samples : `int`
         Number of samples to generate.
 
-    sd : float
+    sd : `float`
         Standard deviation of the normally distributed errors.
 
-    X_low : float
+    X_low : `float`
         Lower bound for the simulated distribution of X.
 
-    X_high : float
+    X_high : `float`
         Upper bound for the simulated distribution of X.
 
-    random_seed : int
+    random_seed : `int`
         Seed to control randomness.
 
     Returns
     -------
-    tuple
-        A tuple containing the X and y arrays. X is a 2D array with shape (n_samples, 1) and y is a 1D array with shape (n_samples,). X contains the simulated X values and y contains the corresponding sine values with added normally distributed errors.
+    `tuple`
+        A tuple containing the `X` and `y` arrays. `X` is a 2D array with shape `(n_samples, 1)` and `y` is a 1D array with shape `(n_samples,)`. `X` contains the simulated X values and `y` contains the corresponding sine values with added normally distributed errors.
     """
 
     np.random.seed(random_seed)
@@ -83,22 +83,22 @@ def split_data(X, y, holdout_size=0.2, random_seed=None):
 
     Parameters
     ----------
-    X : numpy.ndarray
-        The input features.
+    X : `ndarray`
+        The input features, which is a 2D array of shape `(n_samples, 1)`.
 
-    y : numpy.ndarray
-        The target variable.
+    y : `ndarray`
+        The target variable, which is a 1D array of shape `(n_samples,)`.
 
-    holdout_size : float
+    holdout_size : `float`
         The proportion of the data to include in the test split.
         
-    random_seed : int
+    random_seed : `int`
         Seed to control randomness.
 
     Returns
     -------
-    tuple
-        A tuple containing the split training and test data: (X_train, X_test, y_train, y_test).
+    `tuple`
+        A tuple containing the split training and test data: `(X_train, X_test, y_train, y_test)`.
     """
 
     np.random.seed(random_seed)

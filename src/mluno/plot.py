@@ -8,28 +8,32 @@ def plot_predictions(X, y, regressor, conformal=False, title=''):
 
     Parameters
     ----------
-    X : numpy.ndarray
+    X : `ndarray`
         A 2D array of the input data.
 
-    y : numpy.ndarray
-        A 1D array of the same length as X of the true target values.
+    y : `ndarray`
+        A 1D array of the same length as `X` of the true target values.
 
-    regressor : object
+    regressor : `object`
         A regressor object with a `predict` method that can be used to predict target values.
 
-    conformal : bool
+    conformal : `bool`
         If True, the regressor is assumed to return prediction intervals (lower and upper bounds) along with the predictions. The prediction intervals are plotted as a shaded area.
 
-    title : str
+    title : `str`
         The title of the plot.
 
     Returns
     -------
-    matplotlib.figure.Figure
+    `matplotlib.figure.Figure`
         The figure object for the plot.
 
-    matplotlib.axes.Axes
+    `matplotlib.axes.Axes`
         The axes object for the plot.
+    
+    Notes
+    -----
+    This function assumes that the `predict` method of `regressor` returns a tuple of three elements (predictions, lower bounds, upper bounds) when `conformal` is True.
     """
     fig, ax = plt.subplots()
     
